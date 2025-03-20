@@ -1,18 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const proyectos = [
+  {
+    title: "Sistema de Navegación Nostromo",
+    description: "Simulador de navegación espacial en JS.",
+    repoUrl: "https://github.com/[tu-usuario]/nostromo-nav",
+    liveUrl: "https://[tu-proyecto].vercel.app"
+  },
+  {
+    title: "Detector de Xenomorfos",
+    description: "App para rastrear formas de vida alienígenas.",
+    repoUrl: "https://github.com/[tu-usuario]/xeno-detector",
+  },
+];
 ---
 
-<Layout title="Mi Portfolio & Blog">
+<Layout title="Portfolio">
   <main>
-    <h1>Bienvenido a mi Portfolio</h1>
-    <p>Soy [Tu Nombre], desarrollador/diseñador/escritor...</p>
     <section>
-      <h2>Últimos Posts</h2>
-      <!-- Aquí irán los posts dinámicamente más adelante -->
+      <h2 class="terminal blink">Bienvenido a bordo</h2>
+      <p>Soy [Tu Nombre], ingeniero de sistemas a bordo de la Nostromo. Aquí están mis proyectos y credenciales.</p>
     </section>
+
+    <section id="proyectos">
+      <h2 class="terminal">Proyectos</h2>
+      {proyectos.map(proyecto => (
+        <ProjectCard 
+          title={proyecto.title}
+          description={proyecto.description}
+          repoUrl={proyecto.repoUrl}
+          liveUrl={proyecto.liveUrl}
+        />
+      ))}
+    </section>
+
     <section>
-      <h2>Proyectos</h2>
-      <!-- Lista de proyectos -->
+      <h2 class="terminal">CV</h2>
+      <p>Descarga mi informe de servicio: <a href="/assets/cv.pdf" download="CV_[TuNombre].pdf">CV.pdf</a></p>
     </section>
   </main>
 </Layout>

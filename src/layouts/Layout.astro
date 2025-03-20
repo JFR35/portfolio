@@ -1,22 +1,29 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+const { title } = Astro.props;
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} - Transmisión desde Nostromo</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="terminal">NOSTROMO SYS://[Tu Nombre]</h1>
+      <nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="/assets/cv.pdf" download="CV_[TuNombre].pdf">Descargar CV</a>
+        <a href="https://github.com/JFR35/JRF35" target="_blank">GitHub</a>
+      </nav>
+    </header>
+    <slot />
+    <footer>
+      <p class="terminal">Transmisión finalizada - Weyland-Yutani Corp © 2025</p>
+    </footer>
+  </body>
+</html>

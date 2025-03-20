@@ -1,0 +1,30 @@
+---
+const { title, description, repoUrl, liveUrl } = Astro.props;
+---
+
+<article class="project-card">
+  <h2>{title}</h2>
+  <p>{description}</p>
+  <div class="links">
+    {repoUrl && <a href={repoUrl} target="_blank">Repo GitHub</a>}
+    {liveUrl && <a href={liveUrl} target="_blank">Ver Proyecto</a>}
+  </div>
+</article>
+
+<style>
+  .project-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+  }
+  .links a {
+    color: #00ff00;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+  .links a:hover {
+    text-shadow: 0 0 10px #00ff00;
+  }
+</style>
