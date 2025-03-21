@@ -1,48 +1,96 @@
-# Astro Starter Kit: Basics
+# Mi Portafolio Personal
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este repositorio contiene el código fuente de mi portafolio personal, donde muestro mi currículum vitae y mis proyectos.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Tecnologías Utilizadas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+* **Astro:** Framework web moderno para construir sitios rápidos y optimizados.
+* **Bootstrap:** Framework CSS para diseño responsivo y componentes reutilizables.
+* **JavaScript:** Para interactividad y funcionalidades dinámicas.
+* **CSS:** Para estilos personalizados y ajustes de diseño.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Estructura del Proyecto
+¡Claro! Aquí tienes un README para tu repositorio de portafolio, adaptado a las tecnologías que estás utilizando:
 
-## 🚀 Project Structure
+Markdown
 
-Inside of your Astro project, you'll see the following folders and files:
+# Mi Portafolio Personal
 
-```text
-/
+Este repositorio contiene el código fuente de mi portafolio personal, donde muestro mi currículum vitae y mis proyectos.
+
+## Tecnologías Utilizadas
+
+* **Astro:** Framework web moderno para construir sitios rápidos y optimizados.
+* **Bootstrap:** Framework CSS para diseño responsivo y componentes reutilizables.
+* **JavaScript:** Para interactividad y funcionalidades dinámicas.
+* **CSS:** Para estilos personalizados y ajustes de diseño.
+
+## Estructura del Proyecto
+
 ├── public/
-│   └── favicon.svg
+│   ├── assets/
+│   │   └── cv.pdf         # Archivo de currículum vitae
+│   └── styles/
+│       └── global.css     # Estilos globales y Bootstrap
 ├── src/
+│   ├── components/       # Componentes reutilizables de Astro
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+│   │   └── Layout.astro   # Layout principal del sitio
+│   └── pages/            # Páginas del sitio
+│       ├── index.astro    # Página principal
+│       └── ...            # Otras páginas (proyectos, etc.)
+├── package.json          # Dependencias del proyecto
+└── README.md             # Este archivo
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Instrucciones de Instalación
 
-## 🧞 Commands
+1.  Clona el repositorio:
 
-All commands are run from the root of the project, from a terminal:
+    ```bash
+    git clone [https://www.reddit.com/r/dataengineering/comments/1ijecea/best_projects_for_public_git_repos_to_show_oopde/](https://www.reddit.com/r/dataengineering/comments/1ijecea/best_projects_for_public_git_repos_to_show_oopde/)
+    ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2.  Navega al directorio del proyecto:
 
-## 👀 Want to learn more?
+    ```bash
+    cd [nombre del repositorio]
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3.  Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+## Instrucciones de Ejecución
+
+1.  Ejecuta el servidor de desarrollo:
+
+    ```bash
+    npm run dev
+    ```
+
+2.  Abre tu navegador y visita `http://localhost:4321` para ver el portafolio.
+
+## Personalización
+
+* **Contenido:** Edita los archivos en `src/pages` para agregar tu información personal, currículum y proyectos.
+* **Estilos:** Modifica `public/styles/global.css` para personalizar los estilos del sitio.
+* **Componentes:** Crea componentes reutilizables en `src/components` para organizar mejor tu código.
+* **Currículum:** Reemplaza `public/assets/cv.pdf` con tu propio archivo de currículum.
+
+## Despliegue
+
+Puedes desplegar este portafolio en cualquier plataforma que soporte sitios estáticos, como Netlify, Vercel o GitHub Pages.
+
+## Contribución
+
+Si encuentras algún error o tienes sugerencias de mejora, ¡no dudes en abrir un issue o enviar un pull request!
+
+## Licencia
+
+Este proyecto está bajo la licencia [MIT](LICENSE).
+
+## Contacto
+
+Si tienes alguna pregunta o comentario, puedes contactarme en [tu correo electrónico] o a través de [tu perfil de LinkedIn].
