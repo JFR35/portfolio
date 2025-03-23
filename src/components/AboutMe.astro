@@ -1,0 +1,54 @@
+<section id="inicio" class="section bg-space text-center d-flex align-items-center" style="min-height: 100vh;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <!-- Imagen del perfil -->
+            <div class="col-md-4 mb-4">
+                <div class="profile-container">
+                    <img src="/src/assets/Moi.jpg" alt="Juan Fajardo Reyes" class="img-fluid rounded-circle shadow-lg profile-img" />
+                </div>
+            </div>
+            <!-- Títulos y botones -->
+            <div class="col-md-8 text-white mb-4">
+                <h1 class="display-3 fw-bold mb-3 retro-text">Juan Fajardo Reyes</h1>
+                <p class="lead fs-4 mb-4">Desarrollador Web | Especialista en IT Sanitario</p>
+                <p class="fs-5 mb-4">Grado Superior en Desarrollo de Aplicaciones Web | Especialista Informático en Entornos Sanitarios | Certificación Open EHR</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#proyectos" class="btn btn-retro btn-lg px-4 py-2 mt-3" aria-label="Ver proyectos">Ver Proyectos</a>
+                    <a href="/assets/CV_Juan_Fajardo_Reyes.pdf" class="btn btn-retro btn-lg px-4 py-2 mt-3" download="CV_Juan_Fajardo_Reyes.pdf" aria-label="Descargar CV">Descargar CV</a>
+                    <a href="#formacion" class="btn btn-retro btn-lg px-4 py-2 mt-3" aria-label="Formación académica">Formación Académica</a>
+                </div>
+            </div>
+            <!-- Descripción adicional -->
+            <div class="col-md-10 text-white">
+                <p class="fs-5 mb-4">
+                    Soy un desarrollador web especializado en crear soluciones tecnológicas para entornos sanitarios. Mi enfoque está en la interoperabilidad de sistemas y en el uso de tecnologías como HL7v2, FHIR y herramientas de integración como Mirth Connect, para mejorar la eficiencia y la comunicación entre diferentes plataformas. Mi objetivo es ayudar a los profesionales de la salud a aprovechar las tecnologías más avanzadas para ofrecer un mejor servicio a los pacientes.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Separador mínimo entre secciones -->
+    <div class="separator"></div>
+</section>
+<style>
+    /* Espaciado entre elementos dentro de la sección */
+.section .container > .row > div {
+    padding: 15px 20px; /* Ajusta el espaciado interno */
+}
+
+/* Perfil */
+.profile-container {
+    margin-bottom: 20px; /* Reduce el espacio entre la imagen y el texto */
+}
+
+/* Botones */
+.btn-retro {
+    margin-bottom: 10px; /* Reduce los espacios entre botones */
+}
+
+/* Espaciado menor entre secciones */
+.separator {
+    height: 50px; /* Espaciador mínimo */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2));
+}
+
+</style>

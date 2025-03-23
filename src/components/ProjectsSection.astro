@@ -1,0 +1,124 @@
+---
+const proyectos = [
+  {
+    title: "Sistema para personas con hipertensión",
+    description: "Caso de uso para personas con problemas de Hipertensión",
+    repoUrl: "https://github.com/JFR35/nostromo-nav",
+    liveUrl: "https://nostromo-nav.vercel.app",
+    imageUrl: "/src/assets/Moi.jpg",
+  },
+  {
+    title: "Aplicación Web para Reiki TuBienestar",
+    description: "Pagína para petición de citas",
+    repoUrl: "https://github.com/JFR35/xeno-detector",
+    imageUrl: "/src/assets/Moi.jpg",
+  },
+  {
+  title: "Aplicación Web Deportiva",
+    description: "Aplicación para guardar tus registros",
+    repoUrl: "https://github.com/JFR35/My-Personal-Trainner",
+    imageUrl: "/src/assets/Moi.jpg",
+  }
+];
+---
+<section id="proyectos" class="section bg-space py-5 text-white">
+  <div class="container">
+    <h2 class="text-center mb-5 retro-text">Proyectos</h2>
+    <div class="row justify-content-center">
+      {proyectos.map((proyecto) => (
+        <div class="col-12 mb-5">
+          <div class="d-flex flex-wrap align-items-center project-layout">
+            <!-- Descripción completa y enlaces a la izquierda -->
+            <div class="col-lg-7 col-md-6 mb-3 mb-md-0 project-details">
+              <h3 class="retro-text">{proyecto.title}</h3>
+              <p class="mb-4">{proyecto.description}</p>
+              <div class="d-flex gap-3 flex-wrap">
+                <a href={proyecto.repoUrl} class="btn btn-outline-light" target="_blank" aria-label={`Repositorio de ${proyecto.title}`}>
+                  Ver Repositorio
+                </a>
+                {proyecto.liveUrl && (
+                  <a href={proyecto.liveUrl} class="btn btn-success" target="_blank" aria-label={`Ver demo de ${proyecto.title}`}>
+                    Ver Demo
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <!-- Imagen y breve descripción a la derecha -->
+            <div class="col-lg-5 col-md-6 text-center">
+              <img
+                src={proyecto.imageUrl}
+                alt={proyecto.title}
+                class="img-fluid rounded shadow-lg"
+                style="max-height: 300px; object-fit: cover;"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  /* Proyecto Layout */
+.project-layout {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.project-layout:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Descripción del proyecto */
+.project-details {
+  color: var(--text-light);
+}
+
+.project-details h3 {
+  font-family: var(--font-retro);
+  margin-bottom: 15px;
+}
+
+.project-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d3d9e8;
+}
+
+/* Botones para el repositorio y demo */
+.project-details .btn {
+  font-size: 0.9rem;
+  padding: 10px 20px;
+}
+
+.project-details .btn-outline-light {
+  border-color: #ffffff;
+}
+
+.project-details .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #1b2a5b;
+}
+
+.project-details .btn-success {
+  background-color: #28a745;
+}
+
+.project-details .btn-success:hover {
+  background-color: #218838;
+}
+
+/* Imagen */
+.project-layout img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+</style>
