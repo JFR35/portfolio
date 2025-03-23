@@ -5,40 +5,106 @@ import ProjectCard from '../components/ProjectCard.astro';
 const proyectos = [
   {
     title: "Sistema de Navegación Nostromo",
-    description: "Simulador de navegación espacial en JS.",
-    repoUrl: "https://github.com/[tu-usuario]/nostromo-nav",
-    liveUrl: "https://[tu-proyecto].vercel.app"
+    description: "Simulador de navegación espacial construido con JavaScript y Three.js.",
+    repoUrl: "https://github.com/JFR35/nostromo-nav",
+    liveUrl: "https://nostromo-nav.vercel.app",
+    imageUrl: "https://via.placeholder.com/300x200?text=Nostromo+Nav"
   },
   {
     title: "Detector de Xenomorfos",
-    description: "App para rastrear formas de vida alienígenas.",
-    repoUrl: "https://github.com/[tu-usuario]/xeno-detector",
+    description: "Aplicación web para rastrear formas de vida alienígenas usando APIs modernas.",
+    repoUrl: "https://github.com/JFR35/xeno-detector",
+    imageUrl: "https://via.placeholder.com/300x200?text=Xeno+Detector"
   },
 ];
 ---
 
 <Layout title="Portfolio">
-  <main>
-    <section>
-      <h2 class="terminal blink">Bienvenido a bordo</h2>
-      <p>Soy Juan, Desarrollador Web con Especializacion de IT en Entornos Sanitarios</p>
-    </section>
+  <!-- Sección Inicio -->
+  <section id="inicio" class="section bg-dark text-center d-flex align-items-center" style="min-height: 100vh;">
+    <div class="container">
+      <h1 class="display-4">Juan Fajardo Reyes</h1>
+      <p class="lead">Desarrollador Web | Especialista en IT Sanitario</p>
+      <a href="#proyectos" class="btn btn-success mt-3">Ver Proyectos</a>
+    </div>
+  </section>
 
-    <section id="proyectos">
-      <h2 class="terminal">Proyectos</h2>
-      {proyectos.map(proyecto => (
-        <ProjectCard 
-          title={proyecto.title}
-          description={proyecto.description}
-          repoUrl={proyecto.repoUrl}
-          liveUrl={proyecto.liveUrl}
-        />
-      ))}
-    </section>
+  <!-- Sección Sobre mí -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <h2 class="text-center mb-5">Sobre mí</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p>
+            Soy un desarrollador web apasionado por la tecnología y la ciencia ficción. Con experiencia en IT para entornos sanitarios, creo soluciones digitales innovadoras y eficientes.
+          </p>
+          <p>Habilidades: JavaScript, Astro, Bootstrap, APIs, y más.</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="https://via.placeholder.com/300x300?text=Perfil" alt="Foto de perfil" class="img-fluid rounded-circle" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2 class="terminal">CV</h2>
-      <p>Descarga mi informe de servicio: <a href="/assets/cv.pdf" download="CV_[TuNombre].pdf">CV.pdf</a></p>
-    </section>
-  </main>
+  <!-- Sección Proyectos -->
+  <section id="proyectos" class="section bg-dark">
+    <div class="container">
+      <h2 class="text-center mb-5">Proyectos</h2>
+      <div class="row">
+        {proyectos.map(proyecto => (
+          <ProjectCard
+            title={proyecto.title}
+            description={proyecto.description}
+            repoUrl={proyecto.repoUrl}
+            liveUrl={proyecto.liveUrl}
+            imageUrl={proyecto.imageUrl}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="text-center mb-5">Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  // Validación de formulario con Bootstrap
+  (function () {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
