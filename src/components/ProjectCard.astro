@@ -2,15 +2,17 @@
 const { title, description, repoUrl, liveUrl, imageUrl } = Astro.props;
 ---
 
-<div class="col-md-6 col-lg-4 mb-4">
-  <div class="card bg-dark text-light h-100">
-    {imageUrl && <img src={imageUrl} class="card-img-top" alt={`Captura de ${title}`} />}
+<div class="col-md-4 mb-4">
+  <div class="card shadow-sm border-light rounded">
+    <img src={imageUrl} class="card-img-top" alt={title} />
     <div class="card-body">
       <h5 class="card-title">{title}</h5>
       <p class="card-text">{description}</p>
-      <div class="d-flex gap-3">
-        {repoUrl && <a href={repoUrl} class="btn btn-outline-success" target="_blank" rel="noopener noreferrer">GitHub</a>}
-        {liveUrl && <a href={liveUrl} class="btn btn-success" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>}
+      <div class="d-flex justify-content-between">
+        <a href={repoUrl} class="btn btn-primary" target="_blank">Ver Código</a>
+        {liveUrl && (
+          <a href={liveUrl} class="btn btn-success" target="_blank">Ver Demo</a>
+        )}
       </div>
     </div>
   </div>
