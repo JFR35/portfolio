@@ -1,0 +1,54 @@
+.sidebar {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(150, 150, 150, 0.3); /* Más transparente */
+    padding: 8px 5px; /* Menos padding horizontal */
+    border-radius: 20px;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra muy sutil */
+    width: auto; /* Ancho automático según contenido */
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espacio reducido entre items */
+  }
+  
+  .nav-item {
+    color: rgba(255, 255, 255, 0.7); /* Color con transparencia */
+    font-size: 1.2rem; /* Tamaño reducido */
+    text-decoration: none;
+    padding: 6px 8px; /* Padding reducido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%; /* Hace que el área de hover sea circular */
+  }
+  
+  .nav-item:hover {
+    color: rgba(0, 255, 204, 0.9); /* Color con un poco de transparencia */
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil al hover */
+  }
+  
+  /* Para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .sidebar {
+      left: 5px;
+      padding: 5px 3px;
+      border-radius: 15px;
+    }
+    
+    .nav-item {
+      font-size: 1rem;
+      padding: 5px 6px;
+    }
+  }

@@ -25,35 +25,39 @@ const proyectos = [
 ---
 <section id="proyectos" class="section bg-space py-5 text-white">
   <div class="container">
-    <h2 class="text-center mb-5 retro-text">Proyectos</h2>
-    <div class="row justify-content-center">
-      {proyectos.map((proyecto) => (
-        <div class="col-12 mb-5">
-          <div class="d-flex flex-wrap align-items-center project-layout">
-            <!-- Descripción completa y enlaces a la izquierda -->
-            <div class="col-lg-7 col-md-6 mb-3 mb-md-0 project-details">
-              <h3 class="retro-text">{proyecto.title}</h3>
-              <p class="mb-4">{proyecto.description}</p>
-              <div class="d-flex gap-3 flex-wrap">
-                <a href={proyecto.repoUrl} class="btn btn-outline-light" target="_blank" aria-label={`Repositorio de ${proyecto.title}`}>
-                  Ver Repositorio
-                </a>
-                {proyecto.liveUrl && (
-                  <a href={proyecto.liveUrl} class="btn btn-success" target="_blank" aria-label={`Ver demo de ${proyecto.title}`}>
-                    Ver Demo
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <!-- Imagen y breve descripción a la derecha -->
-            <div class="col-lg-5 col-md-6 text-center">
+    <h2 class="text-center mb-5 retro-text">Proyectos Destacados</h2>
+    <div class="row justify-content-center g-4"> {/* Added gutter */}
+      {proyectos.map((proyecto, index) => (
+        <div class="col-12 mb-4" key={`proyecto-${index}`}>
+          <div class="d-flex flex-column flex-md-row align-items-center project-layout">
+            {/* Imagen ahora arriba en móviles */}
+            <div class="col-md-5 mb-3 mb-md-0 text-center order-md-2">
               <img
                 src={proyecto.imageUrl}
-                alt={proyecto.title}
-                class="img-fluid rounded shadow-lg"
-                style="max-height: 300px; object-fit: cover;"
+                alt={`Captura del proyecto ${proyecto.title}`}
+                class="img-fluid rounded-3 shadow-lg project-image"
+                loading="lazy"
               />
+            </div>
+
+            {/* Contenido */}
+            <div class="col-md-7 pe-md-4 order-md-1">
+              <h3 class="retro-text mb-3">{proyecto.title}</h3>
+              <p class="mb-4 project-description">{proyecto.description}</p>
+              
+              <div class="d-flex flex-wrap gap-3 align-items-center">
+                <a href={proyecto.repoUrl} class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github me-2"></i> Código
+                </a>
+                {proyecto.liveUrl && (
+                  <a href={proyecto.liveUrl} class="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt me-2"></i> Demo
+                  </a>
+                )}
+                <span class="badge bg-info text-dark ms-auto">
+                  {index + 1}/{proyectos.length}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -64,63 +68,65 @@ const proyectos = [
 <style>
   /* Proyecto Layout */
 .project-layout {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.5), rgba(20, 20, 40, 0.7));
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .project-layout:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 204, 0.1);
+  border-color: rgba(0, 255, 204, 0.3);
 }
 
-/* Descripción del proyecto */
-.project-details {
-  color: var(--text-light);
+/* Imágenes */
+.project-image {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
-.project-details h3 {
-  font-family: var(--font-retro);
-  margin-bottom: 15px;
+.project-layout:hover .project-image {
+  transform: scale(1.03);
 }
 
-.project-details p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #d3d9e8;
+/* Texto */
+.project-description {
+  color: #b8c2e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-/* Botones para el repositorio y demo */
-.project-details .btn {
-  font-size: 0.9rem;
-  padding: 10px 20px;
+/* Botones mejorados */
+.btn-outline-light {
+  transition: all 0.3s;
+  border-width: 2px;
 }
 
-.project-details .btn-outline-light {
-  border-color: #ffffff;
+.btn-success {
+  background-color: #00cc99;
+  border: none;
+  transition: all 0.3s;
 }
 
-.project-details .btn-outline-light:hover {
-  background-color: #ffffff;
-  color: #1b2a5b;
+.btn-success:hover {
+  background-color: #00b386;
+  transform: translateY(-2px);
 }
 
-.project-details .btn-success {
-  background-color: #28a745;
-}
-
-.project-details .btn-success:hover {
-  background-color: #218838;
-}
-
-/* Imagen */
-.project-layout img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+/* Responsive */
+@media (max-width: 768px) {
+  .project-layout {
+    padding: 1rem;
+  }
+  
+  .project-image {
+    max-height: 200px;
+    margin-bottom: 1rem;
+  }
 }
 </style>
