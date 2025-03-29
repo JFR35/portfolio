@@ -1,5 +1,4 @@
 ---
-import '/public/styles/inicio.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Image } from 'astro:assets';
 import moiImage from '/public/img/Moi.jpg';
@@ -16,6 +15,8 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
     <meta name="description" content="Portfolio de Juan Fajardo Reyes, Desarrollador Web especializado en IT Sanitario." />
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/hero.css" />
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
@@ -25,16 +26,37 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
         <li>
           <a href="#inicio" title="Inicio" class="nav-item">
             <i class="fas fa-home"></i>
+            <span class="nav-tooltip">Inicio</span>
           </a>
         </li>
         <li>
           <a href="#proyectos" title="Proyectos" class="nav-item">
-            <i class="fas fa-folder"></i>
+            <i class="fas fa-folder-open"></i>
+            <span class="nav-tooltip">Proyectos</span>
           </a>
         </li>
         <li>
-          <a href="#formacion" title="Formación Académica" class="nav-item">
+          <a href="#formacion" title="Formación" class="nav-item">
             <i class="fas fa-graduation-cap"></i>
+            <span class="nav-tooltip">Formación</span>
+          </a>
+        </li>
+        <li>
+          <a href="/assets/CV_Juan_Fajardo_Reyes.pdf" download title="Descargar CV" class="nav-item">
+            <i class="fas fa-file-download"></i>
+            <span class="nav-tooltip">Descargar CV</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/juan-fajardo-reyes-39195753/" title="LinkedIn" class="nav-item" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="nav-tooltip">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:tuemail@example.com" title="Contactar" class="nav-item">
+            <i class="fas fa-envelope"></i>
+            <span class="nav-tooltip">Contactar</span>
           </a>
         </li>
       </ul>
@@ -55,16 +77,9 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
                     width="300"
                     height="300"
                   />
-                  <div class="tech-decor">
-                    <span class="tech-icon"><i class="fab fa-js"></i></span>
-                    <span class="tech-icon"><i class="fab fa-react"></i></span>
-                    <span class="tech-icon"><i class="fab fa-node"></i></span>
-                  </div>
                 </div>
               </div>
             </div>
-    
-            {/* Información Principal Mejorada */}
             <div class="col-lg-8 col-md-7 text-center text-md-start">
               <h1 class="display-4 fw-bold mb-3 retro-text text-glow">
                 <span class="d-block">Juan Fajardo Reyes</span>
@@ -73,10 +88,8 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
               
               <p class="lead fs-4 mb-4 text-highlight">
                 <i class="fas fa-code me-2"></i> Desarrollador Web | 
-                <i class="fas fa-heartbeat me-2 ms-2"></i> Conocimientos en Salud Digital
+                <i class="fas fa-heartbeat me-2 ms-2"></i> Formación en Salud Digital
               </p>
-              
-              {/* Botones Mejorados */}
               <div class="d-flex justify-content-center justify-content-md-start gap-3 flex-wrap mb-4">
                 <a href="#proyectos" class="btn btn-primary btn-lg px-4 py-2 btn-hover-glow" aria-label="Ver mis proyectos">
                   <i class="fas fa-laptop-code me-2"></i> Ver Proyectos
@@ -85,8 +98,6 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
                   <i class="fas fa-download me-2"></i> Descargar CV
                 </a>
               </div>
-              
-              {/* Redes Sociales Compactas */}
               <div class="social-links mb-4">
                 <a href="https://www.linkedin.com/in/juan-fajardo-reyes-39195753/" target="_blank" rel="noopener noreferrer" aria-label="Mi perfil de LinkedIn">
                   <i class="fab fa-linkedin-in"></i>
@@ -98,15 +109,13 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
                   <i class="fas fa-envelope"></i>
                 </a>
               </div>
-    
-              {/* Descripción Breve Mejorada */}
               <div class="hero-description bg-dark-transparent p-4 rounded">
                 <p class="mb-0 fs-5">
                   <i class="fas fa-quote-left me-2 text-primary"></i>
-                  Apasionado por transformar ideas en soluciones tecnológicas impactantes. 
-                  Experiencia en desarrollo de aplicaciones web robustas con enfoque en el 
-                  ámbito sanitario. Comprometido con la innovación y excelencia técnica 
-                  para impulsar la transformación digital en salud.
+                  Apasionado por transformar ideas en soluciones tecnológicas a medida. 
+                  Experiencia personal en desarrollo de aplicaciones web robustas y escalables con enfoque en el 
+                  ámbito informático de entornos sanitarios. Me siento comprometido e ilusionado con la innovación y excelencia técnica 
+                  para impulsar la transformación digital en salud y poder contribuir a mejorar la vida de las personas.
                   <i class="fas fa-quote-right ms-2 text-primary"></i>
                 </p>
               </div>
@@ -132,154 +141,5 @@ const { title = "Juan Fajardo - Portfolio" } = Astro.props;
         <p class="mt-2">&copy; 2025 Juan Fajardo Reyes</p>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
-
   </body>
 </html>
-
-<style>
-
-/* Estilos para la sección Hero */
-.hero-section {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 15, 41, 0.9) 0%, rgba(27, 32, 71, 0.9) 100%);
-}
-
-/* Contenedor de perfil mejorado */
-.profile-container {
-  max-width: 300px;
-  position: relative;
-}
-
-.profile-img-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-.profile-img {
-  border: 5px solid rgba(0, 204, 153, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
-}
-
-.profile-img:hover {
-  transform: scale(1.03);
-  border-color: rgba(0, 204, 153, 0.6);
-}
-
-/* Decoración tecnológica */
-.tech-decor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  animation: rotate 20s linear infinite;
-}
-
-.tech-icon {
-  position: absolute;
-  color: rgba(0, 255, 204, 0.7);
-  font-size: 1.5rem;
-}
-
-.tech-icon:nth-child(1) { top: 10%; left: 0; }
-.tech-icon:nth-child(2) { top: 80%; right: 10%; }
-.tech-icon:nth-child(3) { bottom: 10%; left: 50%; }
-
-@keyframes rotate {
-  100% { transform: rotate(360deg); }
-}
-
-/* Texto animado */
-.typed-text {
-  color: #00cc99;
-  font-weight: normal;
-}
-
-.text-highlight {
-  color: #b8c2e0;
-  position: relative;
-  display: inline-block;
-}
-
-.text-highlight::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #00cc99, transparent);
-}
-
-/* Botones mejorados */
-.btn-hover-glow {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-hover-glow:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 204, 153, 0.4);
-}
-
-.btn-primary {
-  background-color: #0066cc;
-  border: none;
-}
-
-/* Redes sociales */
-.social-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  justify-content: flex-start;
-}
-
-.social-links a {
-  color: #b8c2e0;
-  font-size: 1.2rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(184, 194, 224, 0.3);
-}
-
-.social-links a:hover {
-  color: #00cc99;
-  transform: translateY(-3px);
-  border-color: #00cc99;
-  background: rgba(0, 204, 153, 0.1);
-}
-
-/* Descripción */
-.hero-description {
-  border-left: 3px solid #00cc99;
-  transition: all 0.3s ease;
-}
-
-.hero-description:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transform: translateX(5px);
-}
-
-/* Efecto de máquina de escribir (necesitarás JavaScript) */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #00cc99 }
-}
-</style>

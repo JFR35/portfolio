@@ -1,79 +1,70 @@
+---
+import '/public/styles/standars.css';
+---
 <section class="container my-5 py-4">
   <div class="row g-4">
-    
-    <!-- Estándares Sanitarios -->
-    <div class="col-12">
+    <div class="col-md-6">
       <div class="section-header mb-4">
-        <h3 class="section-title text-center position-relative">
-          <span class="section-title-bg">Estándares Sanitarios</span>
+        <h3 class="section-title text-center">
+          Estándares de Interoperabilidad en Sector Sanitario
         </h3>
       </div>
       <div class="d-flex flex-wrap justify-content-center align-items-stretch">
         <div class="tech-card m-2">
           <img src="/public/img/openehr-logo1.png" alt="OpenEHR" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">OpenEHR - Estándar para historiales clínicos electrónicos</span>
+            <span class="tech-description">OpenEHR - Estándar abierto para modelos clínicos y almacenamiento estructurado de historias médicas
+            </span>
           </div>
         </div>
         <div class="tech-card m-2">
           <img src="/public/img/OIP.jpeg" alt="HL7" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">HL7 - Estándar para intercambio de información clínica</span>
+            <span class="tech-description">HL7 FHIR - Estándar para la interoperabilidad de datos de salud basado en recursos estructurados y APIs RESTful</span>
           </div>
         </div>
         <div class="tech-card m-2">
           <img src="/public/img/MirthConnect.png" alt="Mirth Connect" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">Mirth Connect - Herramienta de integración HL7</span>
+            <span class="tech-description">OMOP CDM - Modelo de datos para análisis secundarios de información clínica</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Línea divisoria -->
-    <div class="col-12">
-      <hr class="divider">
-    </div>
-
-    <!-- Herramientas de Integración -->
-    <div class="col-12">
+    <div class="col-md-6">
       <div class="section-header mb-4">
-        <h3 class="section-title text-center position-relative">
-          <span class="section-title-bg">Herramientas de Integración</span>
+        <h3 class="section-title text-center">
+          Herramientas de Integración en Entornos Sanitarios
         </h3>
       </div>
       <div class="d-flex flex-wrap justify-content-center align-items-stretch">
         <div class="tech-card m-2">
           <img src="/public/img/openehr-logo1.png" alt="OpenEHR" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">OpenEHR - Plataforma para sistemas de salud interoperables</span>
+        <span class="tech-description">Better Care - Sandbox para construir arquetipos ADL y consultas AQL</span>
           </div>
         </div>
         <div class="tech-card m-2">
           <img src="/public/img/OIP.jpeg" alt="HL7" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">HL7 FHIR - Estándar moderno para intercambio de datos</span>
+            <span class="tech-description">HAPI FHIR - Librería para el intercambio de recursos FHIR</span>
           </div>
         </div>
         <div class="tech-card m-2">
           <img src="/public/img/MirthConnect.png" alt="Mirth Connect" class="tech-logo">
           <div class="tech-overlay">
-            <span class="tech-description">Mirth Connect - Motor de integración para mensajería HL7</span>
+            <span class="tech-description">Mirth Connect - Motor de integración para transformar y filtrar mensajes</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Línea divisoria -->
-    <div class="col-12">
-      <hr class="divider">
-    </div>
-    
-    <!-- Tecnologías Web -->
-    <div class="col-12">
+    <!-- Sección inferior ocupando todo el ancho -->
+    <div class="col-12 mt-4">
       <div class="section-header mb-4">
-        <h3 class="section-title text-center position-relative">
-          <span class="section-title-bg">Tecnologías Web</span>
+        <h3 class="section-title text-center">
+          Tecnologías Web
         </h3>
       </div>
       <div class="d-flex flex-wrap justify-content-center align-items-stretch">
@@ -129,110 +120,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  /* Estilos generales */
-  .section-header {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #2c3e50;
-    display: inline-block;
-  }
-
-  .section-title-bg {
-    position: relative;
-    z-index: 2;
-    padding: 0 1.5rem;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(255,255,255,0) 100%);
-  }
-
-  .section-title:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 2px;
-    z-index: 1;
-  }
-
-  /* Tarjetas de tecnología */
-  .tech-card {
-    cursor: pointer;
-    position: relative;
-    width: 140px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    padding: 1rem;
-  }
-
-  .tech-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 204, 153, 0.2);
-  }
-
-  .tech-logo {
-    max-width: 100%;
-    max-height: 70px;
-    transition: all 0.3s ease;
-    filter: grayscale(30%);
-  }
-
-  .tech-card:hover .tech-logo {
-    transform: scale(1.1);
-    filter: grayscale(0%);
-  }
-
-  /* Overlay con descripción */
-  .tech-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 102, 204, 0.9);
-    color: white;
-    padding: 0.5rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    text-align: center;
-    font-size: 0.8rem;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-
-  .tech-card:hover .tech-overlay {
-    transform: translateY(0);
-  }
-
-  /* Divisor */
-  .divider {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(0,204,153,0) 0%, rgba(198, 209, 206, 0.8) 50%, rgba(0,204,153,0) 100%);
-    margin: 2rem 0;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .tech-card {
-      width: 120px;
-      height: 100px;
-    }
-    
-    .section-title {
-      font-size: 1.5rem;
-    }
-  }
-</style>

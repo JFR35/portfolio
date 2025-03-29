@@ -1,24 +1,34 @@
 ---
+import '/public/styles/projects.css';
 const proyectos = [
   {
-    title: "Sistema para personas con hipertensión",
-    description: "Caso de uso para personas con problemas de Hipertensión",
+    title: "Sistema para caso de uso de personas con hipertensión",
+    description: "Hapi FHIR con Spring Boot, PostgreSQL, OpenEHR y Angular",
     repoUrl: "https://github.com/JFR35/nostromo-nav",
     liveUrl: "https://nostromo-nav.vercel.app",
-    imageUrl: "/public/img/Moi.jpg",
+    imageUrl: "/public/img/reiki.png",
   },
   {
-    title: "Aplicación Web para Reiki TuBienestar",
-    description: "Pagína para petición de citas",
+    title: "App Web para gestión de Eventos Artisticos In the Soul",
+    description: "Con Laravel, Inertia+Pinia y Vue con SCSS y Bootstrap, MySQL",
+    repoUrl: "https//github.com/JFR35/nostromo-nav",
+    liveUrl: "https://nostromo-nav.vercel.app",
+    imageUrl: "/public/img/reiki.png",
+  },
+  {
+    title: "Aplicación Web de gestión citas para Reiki TuBienestar",
+    description: "Con Spring Boot (arquitectura hexagonal), MySQL, Angular con Angular Material, SCSS y autenticación JWT", 
     repoUrl: "https://github.com/JFR35/xeno-detector",
-    imageUrl: "/public/img/Moi.jpg",
+    liveUrl: "https://nostromo-nav.vercel.app",
+    imageUrl: "/public/img/Reiki.png",
 
   },
   {
-  title: "Aplicación Web Deportiva",
-    description: "Aplicación para guardar tus registros",
+  title: "Aplicación Web para registros Deportivos",
+    description: "Con HML5, CSS3 y JavaScript, LocalStorage",
     repoUrl: "https://github.com/JFR35/My-Personal-Trainner",
-    imageUrl: "/public/img/Moi.jpg",
+    liveUrl: "https://nostromo-nav.vercel.app",
+    imageUrl: "/public/img/AppDeportes.png",
 
   }
 ];
@@ -26,11 +36,10 @@ const proyectos = [
 <section id="proyectos" class="section bg-space py-5 text-white">
   <div class="container">
     <h2 class="text-center mb-5 retro-text">Proyectos Destacados</h2>
-    <div class="row justify-content-center g-4"> {/* Added gutter */}
+    <div class="row justify-content-center g-4"> 
       {proyectos.map((proyecto, index) => (
         <div class="col-12 mb-4" key={`proyecto-${index}`}>
           <div class="d-flex flex-column flex-md-row align-items-center project-layout">
-            {/* Imagen ahora arriba en móviles */}
             <div class="col-md-5 mb-3 mb-md-0 text-center order-md-2">
               <img
                 src={proyecto.imageUrl}
@@ -39,8 +48,6 @@ const proyectos = [
                 loading="lazy"
               />
             </div>
-
-            {/* Contenido */}
             <div class="col-md-7 pe-md-4 order-md-1">
               <h3 class="retro-text mb-3">{proyecto.title}</h3>
               <p class="mb-4 project-description">{proyecto.description}</p>
@@ -65,68 +72,3 @@ const proyectos = [
     </div>
   </div>
 </section>
-<style>
-  /* Proyecto Layout */
-.project-layout {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  background: linear-gradient(145deg, rgba(0, 0, 0, 0.5), rgba(20, 20, 40, 0.7));
-  backdrop-filter: blur(8px);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.project-layout:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 255, 204, 0.1);
-  border-color: rgba(0, 255, 204, 0.3);
-}
-
-/* Imágenes */
-.project-image {
-  max-height: 250px;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.project-layout:hover .project-image {
-  transform: scale(1.03);
-}
-
-/* Texto */
-.project-description {
-  color: #b8c2e0;
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* Botones mejorados */
-.btn-outline-light {
-  transition: all 0.3s;
-  border-width: 2px;
-}
-
-.btn-success {
-  background-color: #00cc99;
-  border: none;
-  transition: all 0.3s;
-}
-
-.btn-success:hover {
-  background-color: #00b386;
-  transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .project-layout {
-    padding: 1rem;
-  }
-  
-  .project-image {
-    max-height: 200px;
-    margin-bottom: 1rem;
-  }
-}
-</style>
