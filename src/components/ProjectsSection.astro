@@ -1,6 +1,9 @@
 ---
 import '/public/styles/projects.css';
 import springbootLogo from '/public/img/springboot.svg';
+import reikiImage from '/public/img/reiki.png';
+import reikiProjectImage from '/public/img/Reiki.png';
+import deportesImage from '/public/img/AppDeportes.png';
 
 const proyectos = [
   {
@@ -8,46 +11,47 @@ const proyectos = [
     description: "Hapi FHIR con Spring Boot, PostgreSQL, OpenEHR y Angular",
     repoUrl: "https://github.com/JFR35/nostromo-nav",
     liveUrl: "https://nostromo-nav.vercel.app",
-    src: {springbootLogo} 
+    image: reikiProjectImage // Cambiado de src a image para mayor claridad
   },
   {
     title: "App Web para gestión de Eventos Artisticos In the Soul",
     description: "Con Laravel, Inertia+Pinia y Vue con SCSS y Bootstrap, MySQL",
     repoUrl: "https//github.com/JFR35/nostromo-nav",
     liveUrl: "https://nostromo-nav.vercel.app",
-    imageUrl: "/public/img/reiki.png",
+    image: springbootLogo
   },
   {
     title: "Aplicación Web de gestión citas para Reiki TuBienestar",
     description: "Con Spring Boot (arquitectura hexagonal), MySQL, Angular con Angular Material, SCSS y autenticación JWT", 
     repoUrl: "https://github.com/JFR35/xeno-detector",
     liveUrl: "https://nostromo-nav.vercel.app",
-    imageUrl: "/public/img/Reiki.png",
-
+    image: reikiImage
   },
   {
-  title: "Aplicación Web para registros Deportivos",
+    title: "Aplicación Web para registros Deportivos",
     description: "Con HML5, CSS3 y JavaScript, LocalStorage",
     repoUrl: "https://github.com/JFR35/My-Personal-Trainner",
     liveUrl: "https://nostromo-nav.vercel.app",
-    imageUrl: "/public/img/AppDeportes.png",
-
+    image: deportesImage
   }
 ];
 ---
+
 <section id="proyectos" class="section bg-space py-5 text-white">
   <div class="container">
     <h2 class="text-center mb-5 retro-text">Proyectos Destacados</h2>
     <div class="row justify-content-center g-4"> 
       {proyectos.map((proyecto, index) => (
-        <div class="col-12 mb-4" key={`proyecto-${index}`}>
+        <div class="col-12 mb-4">
           <div class="d-flex flex-column flex-md-row align-items-center project-layout">
             <div class="col-md-5 mb-3 mb-md-0 text-center order-md-2">
               <img
-                src={proyecto.imageUrl}
+                src={proyecto.image.src}
                 alt={`Captura del proyecto ${proyecto.title}`}
                 class="img-fluid rounded-3 shadow-lg project-image"
                 loading="lazy"
+                width={proyecto.image.width} 
+                height={proyecto.image.height}
               />
             </div>
             <div class="col-md-7 pe-md-4 order-md-1">
