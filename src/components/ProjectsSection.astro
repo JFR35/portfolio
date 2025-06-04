@@ -1,18 +1,28 @@
 ---
 import '/public/styles/projects.css';
-import pdaw from '/public/img/pdaw.png';
 import reikiImage from '/public/img/reiki.png';
-import reikiProjectImage from '/public/img/Reiki.png';
 import deportesImage from '/public/img/AppDeportes.png';
+import MirthETL from '/public/img/Mirth_ETL.png';
+import pdaw from '/public/img/Proyecto_final.png';
 
 const proyectos = [
   {
+    title: "Extración Transfromación y Carga de Datos (ETL)",
+    description: "Flujo de trabajo ETL con Mirth Connect, Spring Boot, y Aidbox de un mensaje HL7v2.5 a FHIR.",
+    repoUrl: "https://github.com/JFR35/ETL_HL7_To_FHIRSERVER",
+    liveUrl: "https://1drv.ms/v/s!ArytDc2XcBxYwJUnVBISugA5a1DJ9A?e=9zHj94",
+    docuUrl: "https://1drv.ms/b/s!ArytDc2XcBxYwJUmzEtLu-umvygeLQ?e=Eb0d13",
+    image: MirthETL
+  },
+  {
     title: "Sistema para caso de uso de personas con hipertensión",
-    description: "Hapi FHIR con Spring Boot, PostgreSQL, OpenEHR y Angular",
+    description: "Integración de un sistema de monitorización de la presión arterial con una aplicación web para el seguimiento de pacientes hipertensos.",
     repoUrl: "https://github.com/JFR35/BackPDAW",
-    liveUrl: "https://nostromo-nav.vercel.app",
+    liveUrl: "https://1drv.ms/v/s!ArytDc2XcBxYwJUpFWCay3Ds4iiwzA?e=nHkidI",
+    docuUrl: "https://1drv.ms/b/s!ArytDc2XcBxYwJUojdLyAYhf6bNyMA?e=MRdAS5",
     image: pdaw
   },
+  /*
   {
     title: "App Web para gestión de Eventos Artisticos In the Soul",
     description: "Con Laravel, Inertia+Pinia y Vue con SCSS y Bootstrap, MySQL",
@@ -20,6 +30,7 @@ const proyectos = [
     liveUrl: "https://nostromo-nav.vercel.app",
     image: reikiImage
   },
+  */
   {
     title: "Aplicación Web de gestión citas para Reiki TuBienestar",
     description: "Con Spring Boot (arquitectura hexagonal), MySQL, Angular con Angular Material, SCSS y autenticación JWT", 
@@ -36,7 +47,6 @@ const proyectos = [
   }
 ];
 ---
-
 <section id="proyectos" class="section bg-space py-5 text-white">
   <div class="container">
     <h2 class="text-center mb-5 retro-text">Proyectos Destacados</h2>
@@ -59,14 +69,36 @@ const proyectos = [
               <p class="mb-4 project-description">{proyecto.description}</p>
               
               <div class="d-flex flex-wrap gap-3 align-items-center">
-                <a href={proyecto.repoUrl} class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={proyecto.repoUrl || '#'} 
+                  class="btn btn-outline-light btn-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  {...(!proyecto.repoUrl && {tabIndex: -1, 'aria-disabled': 'true', onClick: e => e.preventDefault()})}
+                >
                   <i class="fab fa-github me-2"></i> Código
                 </a>
-                {proyecto.liveUrl && (
-                  <a href={proyecto.liveUrl} class="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt me-2"></i> Demo
-                  </a>
-                )}
+
+                <a 
+                  href={proyecto.liveUrl && proyecto.liveUrl !== "x" ? proyecto.liveUrl : '#'} 
+                  class={`btn btn-success btn-sm ${(!proyecto.liveUrl || proyecto.liveUrl === "x") ? 'disabled' : ''}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  {...(!proyecto.liveUrl || proyecto.liveUrl === "x") && {tabIndex: -1, 'aria-disabled': 'true', onClick: e => e.preventDefault()}}
+                >
+                  <i class="fas fa-external-link-alt me-2"></i> Demo
+                </a>
+
+                <a 
+                  href={proyecto.docuUrl || '#'} 
+                  class={`btn btn-warning btn-sm ${!proyecto.docuUrl ? 'disabled' : ''}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  {...(!proyecto.docuUrl && {tabIndex: -1, 'aria-disabled': 'true', onClick: e => e.preventDefault()})}
+                >
+                  <i class="fas fa-book me-2"></i> Documentación
+                </a>
+
                 <span class="badge bg-info text-dark ms-auto">
                   {index + 1}/{proyectos.length}
                 </span>
