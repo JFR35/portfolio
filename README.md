@@ -13,13 +13,6 @@ Este repositorio contiene el código fuente de mi portafolio personal, donde mue
 
 Este repositorio contiene el código fuente de mi portafolio personal, donde muestro mi currículum vitae y mis proyectos.
 
-## Tecnologías Utilizadas
-
-* **Astro:** Framework web moderno para construir sitios rápidos y optimizados.
-* **Bootstrap:** Framework CSS para diseño responsivo y componentes reutilizables.
-* **JavaScript:** Para interactividad y funcionalidades dinámicas.
-* **CSS:** Para estilos personalizados y ajustes de diseño.
-
 ## Estructura del Proyecto
 
 ├── public/

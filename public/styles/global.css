@@ -1,6 +1,7 @@
 /* Variables CSS */
 :root {
   --font-retro: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --text-light: #ffffff;
   --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -44,8 +45,11 @@ p {
   color: var(--text-light); 
 }
 
-
-
+.experience-details li {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
 
 
